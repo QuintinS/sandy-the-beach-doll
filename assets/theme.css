@@ -1531,23 +1531,31 @@ input.spr-button-primary,
 .spr-button-primary:not(input),
 .spr-pagination-prev > a,
 .spr-pagination-next > a {
+
   position: relative;
   display: inline-block;
   padding: 14px 28px;
-  line-height: normal;
-  border: 1px solid transparent;
-  border-radius: 0;
-  text-transform: uppercase;
-  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 12px));
+  margin: 0.1em;
+  overflow: hidden;
+
+  border: 2px solid transparent;
+
   text-align: center;
-  letter-spacing: 0.2em;
-  font-family: var(--heading-font-family);
-  font-weight: var(--heading-font-weight);
-  font-style: var(--heading-font-style);
+  line-height: normal;
+
+  font-size: var(--font-size-button);
+  font-family: var(--text-font-family);
+  font-weight: var(--text-font-weight);
+  font-style: var(--text-font-style);
+
   background-color: transparent;
-  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  z-index: 1;
   -webkit-tap-highlight-color: initial;
+  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+  z-index: 1;
+
+  border-radius: 8px;
+
 }
 
 .Button::before,
@@ -1571,7 +1579,119 @@ input.spr-button-primary::before,
   z-index: -1;
 }
 
+.Button--large {
+
+  font-size: var(--font-size-button--large);
+  padding: 24px;
+  min-width: 300px;
+
+}
+
+.Button--hollow {
+
+  background: transparent;
+  border: 2px solid var(--color-primary);
+
+}
+
+.Button[disabled],
+.shopify-payment-button__button--unbranded[disabled],
+input.spr-button-primary[disabled],
+.spr-summary-actions-newreview[disabled],
+.spr-button-primary:not(input)[disabled],
+.spr-pagination-prev > a[disabled],
+.spr-pagination-next > a[disabled] {
+  cursor: not-allowed;
+  opacity: 0.25;
+}
+
+.Button--primary,
+.shopify-payment-button__button--unbranded,
+.spr-summary-actions-newreview,
+.spr-button-primary:not(input) {
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+.Button--primary:not([disabled]):hover,
+.shopify-payment-button__button--unbranded:not([disabled]):hover,
+.spr-summary-actions-newreview:not([disabled]):hover,
+.spr-button-primary:not(input):not([disabled]):hover{
+  color: var(--color-primary);
+}
+
+.Button--primary.Button--hollow {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.Button--primary.Button--hollow:not([disabled]):hover {
+  color: #fff;
+}
+
+.Button--primary.Button--hollow:not([disabled])::before {
+  background: var(--color-primary);
+}
+
+.Button--secondary {
+  color: #fff;
+  background: transparent;
+  border-color: var(--color-secondary);
+}
+
+.Button--secondary:not([disabled]):hover {
+  color: var(--color-secondary);
+}
+
+.Button--secondary.Button--hollow {
+  background: transparent;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.Button--secondary.Button--hollow::before {
+  background: var(--color-secondary);
+}
+
+.Button--secondary.Button--hollow:not([disabled]):hover {
+  color: #fff;
+}
+
+.Button--primary::before,
+.shopify-payment-button__button--unbranded::before,
+.spr-summary-actions-newreview::before,
+.spr-button-primary:not(input)::before {
+  background-color: var(--color-primary);
+}
+
+.Button--secondary::before {
+  background-color: var(--color-secondary);
+}
+
+.Button--secondary,
+.spr-pagination-prev > a,
+.spr-pagination-next > a {
+  border-color: var(--color-secondary);
+}
+
+.Button--secondary:hover,
+.spr-pagination-prev > a:hover,
+.spr-pagination-next > a:hover {
+  border-color: var(--color-secondary);
+}
+
+.Button--primary::before,
+.Button--secondary::before,
+.spr-pagination-prev > a::before,
+.spr-pagination-next > a::before {
+  transform-origin: right center;
+  transform: scale(1, 1);
+}
+
+
 @media (-moz-touch-enabled: 0), (hover: hover) {
+
   .features--show-button-transition .Button:not([disabled])::before,
   .features--show-button-transition .shopify-payment-button__button--unbranded:not([disabled])::before,
   .features--show-button-transition input.spr-button-primary:not([disabled])::before,
@@ -1589,75 +1709,46 @@ input.spr-button-primary::before,
   .features--show-button-transition .spr-button-primary:not(input):not([disabled]):hover::before,
   .features--show-button-transition .spr-pagination-prev > a:not([disabled]):hover::before,
   .features--show-button-transition .spr-pagination-next > a:not([disabled]):hover::before {
-    transform-origin: right center;
+    transform-origin: left center;
     transform: scale(0, 1);
   }
-}
 
-.Button[disabled],
-.shopify-payment-button__button--unbranded[disabled],
-input.spr-button-primary[disabled],
-.spr-summary-actions-newreview[disabled],
-.spr-button-primary:not(input)[disabled],
-.spr-pagination-prev > a[disabled],
-.spr-pagination-next > a[disabled] {
-  cursor: not-allowed;
-}
-
-.Button--primary,
-.shopify-payment-button__button--unbranded,
-.spr-summary-actions-newreview,
-.spr-button-primary:not(input) {
-  color: var(--button-text-color);
-  border-color: var(--button-background);
-}
-
-.Button--primary::before,
-.shopify-payment-button__button--unbranded::before,
-.spr-summary-actions-newreview::before,
-.spr-button-primary:not(input)::before {
-  background-color: var(--button-background);
-}
-
-@media (-moz-touch-enabled: 0), (hover: hover) {
-  .features--show-button-transition .Button--primary:not([disabled]):hover,
   .features--show-button-transition .shopify-payment-button__button--unbranded:not([disabled]):hover,
   .features--show-button-transition .spr-summary-actions-newreview:not([disabled]):hover,
   .features--show-button-transition .spr-button-primary:not(input):not([disabled]):hover {
     color: var(--button-background);
     background-color: transparent;
   }
-}
 
-.Button--secondary,
-.spr-pagination-prev > a,
-.spr-pagination-next > a {
-  color: var(--text-color-light);
-  border: 1px solid rgba(var(--text-color-light-rgb), 0.2);
-}
-
-.Button--secondary::before,
-.spr-pagination-prev > a::before,
-.spr-pagination-next > a::before {
-  background-color: var(--button-background);
-  transform-origin: right center;
-  transform: scale(0, 1);
-}
-
-@media (-moz-touch-enabled: 0), (hover: hover) {
-  .features--show-button-transition .Button--secondary:not([disabled]):hover,
+  .features--show-button-transition .Button--secondary.Button--hollow:not([disabled]):hover,
   .features--show-button-transition .spr-pagination-prev > a:not([disabled]):hover,
   .features--show-button-transition .spr-pagination-next > a:not([disabled]):hover {
     color: var(--button-text-color);
-    border-color: var(--button-background);
+    border-color: var(--color-secondary);
   }
 
+  .features--show-button-transition .Button--primary:not([disabled]):hover::before,
   .features--show-button-transition .Button--secondary:not([disabled]):hover::before,
   .features--show-button-transition .spr-pagination-prev > a:not([disabled]):hover::before,
   .features--show-button-transition .spr-pagination-next > a:not([disabled]):hover::before {
     transform-origin: left center;
+    transform: scale(0, 1);
+  }
+
+  .features--show-button-transition .Button--primary.Button--hollow::before,
+  .features--show-button-transition .Button--secondary.Button--hollow::before {
+    transform-origin: left center;
+    transform: scale(0, 1);
+  }
+
+  .features--show-button-transition .Button--primary.Button--hollow:not([disabled]):hover::before,
+  .features--show-button-transition .Button--secondary.Button--hollow:not([disabled]):hover::before,
+  .features--show-button-transition .spr-pagination-prev > a:not([disabled]):hover::before,
+  .features--show-button-transition .spr-pagination-next > a:not([disabled]):hover::before {
+    transform-origin: right center;
     transform: scale(1, 1);
   }
+
 }
 
 .Button--full {

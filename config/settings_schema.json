@@ -171,51 +171,10 @@
     "name": "Typography",
     "settings": [
       {
-        "type": "header",
-        "content": "Headings"
-      },
-      {
-        "type": "font_picker",
-        "id": "heading_font",
-        "label": "Font",
-        "default": "helvetica_n4"
-      },
-      {
-        "type": "select",
-        "id": "heading_size",
-        "label": "Size",
-        "info": "All headings (small and large) will be adjusted.",
-        "options": [
-          {
-            "value": "small",
-            "label": "Small"
-          },
-          {
-            "value": "normal",
-            "label": "Normal"
-          },
-          {
-            "value": "large",
-            "label": "Large"
-          }
-        ],
-        "default": "small"
-      },
-      {
         "type": "checkbox",
         "id": "uppercase_heading",
         "label": "Display headings in uppercase",
         "default": true
-      },
-      {
-        "type": "header",
-        "content": "Body text"
-      },
-      {
-        "type": "font_picker",
-        "id": "text_font",
-        "label": "Font",
-        "default": "helvetica_n4"
       },
       {
         "type": "range",

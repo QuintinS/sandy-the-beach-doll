@@ -1,26 +1,51 @@
-{%- assign text_font_bold = settings.text_font | font_modify: 'weight', 'bolder' -%}
-{%- assign text_font_italic = settings.text_font | font_modify: 'style', 'italic' -%}
-{%- assign text_font_bold_italic = text_font_bold | font_modify: 'style', 'italic' -%}
+{% assign heading_font = "tomarik-introvert, sans-serif" %}
+{% assign heading_style = normal %}
+{% assign heading_weight = 400 %}
+
+{% assign text_font = "sofia-pro, sans-serif;" %}
+{% assign text_style = normal %}
+{% assign text_weight = 400 %}
 
 <style>
-  {{ settings.heading_font | font_face: font_display: 'fallback' }}
-  {{ settings.text_font | font_face: font_display: 'fallback' }}
-
-  {{ text_font_bold | font_face: font_display: 'fallback' }}
-  {{ text_font_italic | font_face: font_display: 'fallback' }}
-  {{ text_font_bold_italic | font_face: font_display: 'fallback' }}
 
   :root {
-    --heading-font-family : {{settings.heading_font.family}}, {{ settings.heading_font.fallback_families }};
-    --heading-font-weight : {{settings.heading_font.weight}};
-    --heading-font-style  : {{settings.heading_font.style}};
 
-    --text-font-family : {{settings.text_font.family}}, {{ settings.text_font.fallback_families }};
-    --text-font-weight : {{settings.text_font.weight}};
-    --text-font-style  : {{settings.text_font.style}};
+    --heading-font-family : {{ heading_font }};
+    --heading-font-weight : {{ heading_weight }};
+    --heading-font-style  : {{ heading_style }};
 
-    --base-text-font-size   : {{settings.base_text_font_size}}px;
-    --default-text-font-size: 14px;
+    --text-font-family : {{ text_font }};
+    --text-font-weight : {{ text_weight }};
+    --text-font-style  : {{ text_style }};
+
+    --color-primary: #4c7ebf;
+    --color-secondary: #e97ea0;
+
+    --heading-title-size          : 120px;
+    --heading-title-size--mobile   : 60px;
+    --heading-1-size              : 60px;
+    --heading-1-size--mobile       : 36px;
+    --heading-2-size              : 36px;
+    --heading-2-size--mobile       : 28px;
+    --heading-3-size              : 20px;
+    --heading-3-size--mobile       : 20px;
+    --heading-4-size              : 14px;
+    --heading-4-size--mobile       : 14px;
+    --heading-5-size              : 14px;
+    --heading-5-size--mobile       : 14px;
+    --heading-6-size              : 14px;
+    --heading-6-size--mobile       : 14px;
+
+    --color-title: var(--color-primary);
+    --color-heading-1: var(--color-primary);
+    --color-heading-2: var(--color-primary);
+    --color-heading-3: var(--color-primary);
+    --color-heading-4: var(--color-primary);
+    --color-heading-5: var(--color-secondary);
+    --color-heading-6: var(--color-secondary);
+
+    --base-text-font-size   : 18px;
+    --default-text-font-size: 18px;
 
     {%- assign border_color = settings.background | color_mix: settings.text_color, 85 -%}
 

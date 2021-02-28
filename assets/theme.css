@@ -1579,6 +1579,7 @@ input.spr-button-primary::before,
   z-index: -1;
 }
 
+.shopify-payment-button__button--unbranded,
 .Button--large {
 
   font-size: var(--font-size-button--large);
@@ -7855,6 +7856,16 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+.Header .Header__Icon svg * {
+  fill: var(--color-primary);
+  transition: fill 0.25s;
+}
+
+.Header .Header__Icon:hover svg * {
+  fill: var(--color-secondary);
+  transition: fill 0.25s;
+}
+
 .Header__Wrapper {
   display: flex;
   align-items: center;
@@ -7864,7 +7875,17 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 .Header__Logo {
   position: relative;
-  margin-bottom: 0;
+  max-height: 75px;
+  margin-bottom: 20px;
+}
+
+.Header__Logo svg .logo-path {
+  fill: var(--color-primary);
+  transition: fill 0.25s;
+}
+
+.Header__Logo:hover svg .logo-path {
+  fill: var(--color-brand-pink);
 }
 
 .Header__LogoLink,
@@ -7998,9 +8019,16 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   }
 
   .Header__Icon .Icon--cart-desktop {
+    position: relative;
+    top: -3px;
     height: 23px;
     width: 19px;
   }
+
+  .Header__Icon .Icon--cart-desktop .Header__CartCount {
+    font-family: var(--text-font-family);
+  }
+
 
   .Header__Icon .Icon--search-desktop {
     position: relative;

@@ -3385,7 +3385,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 .Linklist__Item {
   position: relative;
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 1em;
   width: 100%;
   line-height: 1.5;
   text-align: left;
@@ -7608,6 +7608,16 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   padding: 34px 0;
   background: var(--footer-background);
   color: var(--footer-text-color);
+  border-top: 0;
+  border-bottom: 10px solid var(--color-brand-peach);
+}
+
+.Footer a {
+}
+
+.Footer a:focus,
+.Footer a:hover {
+  color: var(--color-secondary);
 }
 
 .Footer--withMargin {
@@ -7641,6 +7651,10 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 }
 
 .Footer__Title {
+  font-family: var(--text-font-family);
+  font-size: var(--heading-4-size);
+  text-transform: uppercase;
+  letter-spacing: 2px;
   margin-bottom: 20px;
 }
 
@@ -7688,7 +7702,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 @media screen and (min-width: 641px) {
   .Footer {
-    padding: 75px 0 42px 0;
+    padding: 75px 0 10px 0;
   }
 
   .Footer--withMargin {
@@ -7736,7 +7750,18 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   }
 
   .Footer__StoreName {
+    color: #979797;
     font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 11px));
+  }
+
+  .Footer__StoreName a {
+    color: var(--color-primary);
+  }
+
+  .Footer__StoreName a:hover,
+  .Footer__StoreName a:focus {
+
+    color: #000;
   }
 
   .Footer__PaymentList {

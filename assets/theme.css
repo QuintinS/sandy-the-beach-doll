@@ -5426,6 +5426,17 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   border-top: 1px solid var(--border-color);
 }
 
+.Section--reversed {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.Section--reversed .SectionHeader__Heading,
+.Section--reversed .SectionHeader__SubHeading,
+.Section--reversed p {
+  color: #fff;
+}
+
 /* When a spacing is applied to a bordered section, as it is isolated, we use padding, otherwise margin */
 .Section--spacingNormal {
   margin: 50px 0;
@@ -7605,11 +7616,25 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 }
 
 .Footer {
+
+  position: relative;
   padding: 34px 0;
   background: var(--footer-background);
   color: var(--footer-text-color);
   border-top: 0;
   border-bottom: 10px solid var(--color-brand-peach);
+
+}
+
+.Footer:before {
+  content: "";
+  display: block;
+  background-image: var(--embellishment--wave);
+  background-repeat: repeat-x;
+  height: 21px;
+  width: 100%;
+  position: absolute;
+  top: -21px;
 }
 
 .Footer a {

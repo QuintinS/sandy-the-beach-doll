@@ -1597,6 +1597,15 @@ input.spr-button-primary::before,
 
 }
 
+@media screen and (max-width: 640px) {
+
+  .shopify-payment-button__button--unbranded,
+  .Button--large {
+    min-width: 250px;
+  }
+
+}
+
 .Button--hollow {
 
   background: transparent;

@@ -3237,6 +3237,12 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   opacity: 1;
 }
 
+.Image--slideUp {
+  transform: translateY(25px);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
 .Image--slideRight,
 .Image--slideLeft {
   transform: translateX(25px);
@@ -3248,6 +3254,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   transform: translateX(-25px);
 }
 
+.Image--lazyLoaded.Image--slideUp,
 .Image--lazyLoaded.Image--slideRight,
 .Image--lazyLoaded.Image--slideLeft {
   opacity: 1;
@@ -7733,6 +7740,12 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 .shopify-section--hero .FeatureText__Content {
   max-width: 300px;
+}
+
+.shopify-section--hero .AspectRatio img {
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  overflow: hidden;
 }
 
 .shopify-section--hero .AspectRatio,

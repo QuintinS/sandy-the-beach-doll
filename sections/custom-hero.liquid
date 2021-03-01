@@ -1,6 +1,6 @@
 <section class="Section {% unless section.settings.image %}Section--spacingNormal{% endunless %}">
 
-  <div class="Container">
+  <div class="Container Container--narrow">
 
     {%- capture section_content -%}
 
@@ -16,7 +16,7 @@
 
               {%- if section.settings.title != blank -%}
 
-                <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+                <h2 class="SectionHeader__Heading Heading u-title">{{ section.settings.title | escape }}</h2>
 
                 <div class="SectionHeader__divider">
                   {% render 'divider' %}
@@ -79,8 +79,8 @@
 
 {% schema %}
 {
-  "name": "Custom Text with image",
-  "class": "shopify-section--bordered shopify-section--confetti shopify-section--custom-image-text",
+  "name": "Custom Hero Image",
+  "class": "shopify-section--bordered shopify-section--custom-image-text shopify-section--hero",
   "settings": [
     {
       "type": "text",
@@ -156,7 +156,7 @@
   "presets": [
     {
       "category": "Shoppe Theory",
-      "name": "Custom - Text with Image",
+      "name": "Custom - Hero",
       "settings": {}
     }
   ]

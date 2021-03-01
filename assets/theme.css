@@ -1353,6 +1353,7 @@ body {
 .features--heading-large .u-title,
 .features--heading-large .Rte .title {
   font-size: var(--heading-title-size--mobile);
+  line-height: 1;
 }
 
 .features--heading-large .u-h1,
@@ -7588,21 +7589,21 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 }
 
 .shopify-section--custom-image-text .Section {
-  position: relative;
-  padding-top: 120px;
-  padding-bottom: 40px;
+
+  padding-top: 80px;
+  padding-bottom: 80px;
+
 }
 
-.shopify-section--custom-image-text .Section:before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 80px;
-  background-image: var(--confetti);
-  background-repeat: repeat-x;
+@media screen and (max-width: 640px) {
+
+  .shopify-section--custom-image-text .Section {
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+  }
+
 }
 
 @media screen and (max-width: 640px) {
@@ -7623,19 +7624,36 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 }
 
+.shopify-section--confetti .Section {
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 40px;
+}
+
+.shopify-section--confetti .Section:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 80px;
+  background-image: var(--confetti);
+  background-repeat: repeat-x;
+}
+
 @media screen and (min-width: 641px) {
 
-  .shopify-section--custom-image-text .Section {
+  .shopify-section--confetti .Section {
     padding-top: 180px;
     padding-bottom: 80px;
   }
 
-  .shopify-section--custom-image-text .Section:before {
+  .shopify-section--confetti .Section:before {
     height: 100px;
   }
 
 }
-
 
 @media screen and (max-width: 640px) {
   .FeatureText--imageLeft {
@@ -7707,6 +7725,45 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 .shopify-section--bordered + .shopify-section--footer {
   border-top: 1px solid var(--footer-border-color);
 }
+
+
+.shopify-section--hero {
+
+}
+
+.shopify-section--hero .FeatureText__Content {
+  max-width: 300px;
+}
+
+.shopify-section--hero .AspectRatio,
+.shopify-section--hero .FeatureText__Content {
+  margin: 0 auto;
+}
+
+.shopify-section--hero .FeatureText__ImageWrapper img {
+
+}
+
+.shopify-section--hero .Section:before {
+
+}
+
+@media screen and (max-width: 640px) {
+
+  .shopify-section--hero .Section {
+
+  }
+
+  .shopify-section--hero .FeatureText__ImageWrapper {
+    padding: 0 40px;
+  }
+
+  .shopify-section--hero .Section:before {
+
+  }
+
+}
+
 
 
 .Section--instagram {

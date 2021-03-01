@@ -101,6 +101,15 @@ h6 {
   font-weight: inherit;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
 h1 {
 
   font-family: var(--heading-font-family);
@@ -5483,6 +5492,15 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   margin-top: 16px;
 }
 
+.SectionHeader__Heading {
+  margin-bottom: 0.5em;
+}
+
+.SectionHeader__divider {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
 .SectionHeader__Description {
   max-width: 530px;
 }
@@ -7525,6 +7543,22 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   text-align: center;
 }
 
+.FeatureText__Content {
+
+}
+
+.FeatureText__Content--center {
+  text-align: center;
+}
+
+.FeatureText__Content--left {
+  text-align: left;
+}
+
+.FeatureText__Content--right {
+  text-align: right;
+}
+
 .FeatureText__ContentWrapper {
   padding-left: 24px;
   padding-right: 24px;
@@ -7543,6 +7577,56 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   margin-top: 25px;
   margin-bottom: 20px;
 }
+
+.shopify-section--custom-image-text .Section {
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 40px;
+}
+
+.shopify-section--custom-image-text .Section:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 80px;
+  background-image: var(--confetti);
+  background-repeat: repeat-x;
+}
+
+@media screen and (max-width: 640px) {
+
+  .shopify-section--custom-image-text .FeatureText {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .shopify-section--custom-image-text .FeatureText .FeatureText__ContentWrapper {
+    order: 2;
+    flex-grow: 1;
+  }
+  .shopify-section--custom-image-text .FeatureText .FeatureText__ImageWrapper {
+    order: 1;
+    flex-grow: 1;
+  }
+
+}
+
+@media screen and (min-width: 641px) {
+
+  .shopify-section--custom-image-text .Section {
+    padding-top: 180px;
+    padding-bottom: 80px;
+  }
+
+  .shopify-section--custom-image-text .Section:before {
+    height: 100px;
+  }
+
+}
+
 
 @media screen and (max-width: 640px) {
   .FeatureText--imageLeft {
@@ -7615,6 +7699,16 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   border-top: 1px solid var(--footer-border-color);
 }
 
+
+.Section--instagram {
+
+}
+
+.Section--instagram .instagram--instafeed {
+  max-width: 1200px;
+  margin: 80px auto;
+}
+
 .Footer {
 
   position: relative;
@@ -7669,6 +7763,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 .Footer__Block {
   margin-top: 48px;
+  flex-grow: 1;
 }
 
 .Footer__Block:first-child {
@@ -7818,6 +7913,11 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   .Footer__Block--text,
   .Footer__Block--newsletter {
     flex-basis: 240px;
+    flex-grow: 1;
+  }
+
+  .Footer__Block--links {
+    flex-grow: 1;
   }
 
   .Footer__Inner + .Footer__Aside {

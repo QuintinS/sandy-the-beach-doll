@@ -25,7 +25,7 @@
               {%- if block.settings.subheading != blank or block.settings.heading != blank -%}
                 <header class="Timeline__Header SectionHeader SectionHeader--center">
                   {%- if block.settings.subheading != blank -%}
-                    <h3 class="SectionHeader__SubHeading Heading u-h6">{{ block.settings.subheading | escape }}</h3>
+                    <h3 class="SectionHeader__SubHeading Heading">{{ block.settings.subheading | escape }}</h3>
                   {%- endif -%}
 
                   {%- if block.settings.heading != blank -%}

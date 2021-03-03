@@ -7795,23 +7795,39 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 }
 
-.shopify-section--custom-testimonials .Testimonial__Heading {
+.shopify-section--custom-testimonials .TestimonialList--custom .Testimonial {
+
+  max-width: 810px;
+  padding: 0 100px;
+
+}
+
+.shopify-section--custom-testimonials .TestimonialList--custom .Testimonial__Heading {
 
   margin-bottom: 0.5em;
 
 }
 
-.shopify-section--custom-testimonials .Testimonial__Text {
-
-  max-width: 300px;
-  margin-bottom: 1em;
-  margin: auto auto 1em;
-
+.shopify-section--custom-testimonials .TestimonialList--custom .flickity-prev-next-button {
+  background: transparent;
+  box-shadow: none;
 }
 
-.shopify-section--custom-testimonials .Testimonial__Content {
+.shopify-section--custom-testimonials .TestimonialList--custom .flickity-prev-next-button {
+  transform: scale(1.8);
+}
 
-  max-width: none;
+.shopify-section--custom-testimonials .TestimonialList--custom .flickity-prev-next-button.previous {
+  top: calc(50% - 20px);
+  left: calc(50% - 420px);
+}
+.shopify-section--custom-testimonials .TestimonialList--custom .flickity-prev-next-button.next {
+  top: calc(50% - 20px);
+  right: calc(50% - 420px);
+}
+
+.shopify-section--custom-testimonials .TestimonialList--custom .Testimonial .Container {
+
   padding: 50px;
 
   font-weight: 300;
@@ -7823,21 +7839,58 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 }
 
-@media screen and (min-width: 640px) {
+.shopify-section--custom-testimonials .TestimonialList--custom .Testimonial .Testimonial__Text {
 
-  .shopify-section--custom-testimonials .Testimonial__Content {
+  max-width: 80%;
+  margin: auto;
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin-bottom: 20px;
 
-    max-width: 610px;
+}
+
+.js .shopify-section--custom-testimonials .TestimonialList .Testimonial {
+  opacity: 0.5;
+  visibility: visible;
+  -webkit-animation: testimonialClosingCustom 0.4s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+          animation: testimonialClosingCustom 0.4s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+.js .shopify-section--custom-testimonials .TestimonialList .Testimonial.is-selected {
+  opacity: 1;
+  visibility: visible;
+  -webkit-animation: testimonialOpeningCustom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s forwards;
+          animation: testimonialOpeningCustom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s forwards;
+}
+
+
+@media screen and (max-width: 640px) {
+
+  .shopify-section--custom-testimonials .TestimonialList--custom .Testimonial {
+
+    padding: 0 20px;
 
   }
 
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1000px) {
 
-  .shopify-section--custom-testimonials .Testimonial__Content {
+  .shopify-section--custom-testimonials .TestimonialList--custom .flickity-prev-next-button.previous {
+    left: calc(50% - 380px);
+  }
+  .shopify-section--custom-testimonials .TestimonialList--custom .flickity-prev-next-button.next {
+    right: calc(50% - 380px);
+  }
 
+}
 
+@media screen and (max-width: 800px) {
+
+  .shopify-section--custom-testimonials .TestimonialList--custom .flickity-prev-next-button.previous {
+    display: none;
+  }
+  .shopify-section--custom-testimonials .TestimonialList--custom .flickity-prev-next-button.next {
+    display: none;
   }
 
 }
@@ -11143,6 +11196,49 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
     transform: translateY(-15px);
   }
 }
+
+@-webkit-keyframes testimonialOpeningCustom {
+  from {
+    visibility: visible;
+    opacity: 0.5;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@keyframes testimonialOpening {
+  from {
+    visibility: visible;
+    opacity: 0.5;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes testimonialClosingCustom {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    visibility: visible;
+    opacity: 0.5;
+  }
+}
+@keyframes testimonialClosingCustom {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    visibility: visible;
+    opacity: 0.5;
+  }
+}
+
 .Testimonial {
   text-align: center;
   font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 18px));

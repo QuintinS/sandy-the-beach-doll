@@ -7444,6 +7444,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         onSelect: this._testimonialChanged.bind(this)
       });
 
+      this.carousel = new __WEBPACK_IMPORTED_MODULE_0__components_Carousel__["default"](this.element.querySelector('.TestimonialList--custom'), {
+        onSelect: this._testimonialChanged.bind(this)
+      });
+
       this._attachListeners();
     }
 

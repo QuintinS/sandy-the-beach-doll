@@ -3,7 +3,7 @@
   "prevNextButtons": true,
   "wrapAround": true,
   "dragThreshold": 16,
-  "pageDots": {% if section.blocks.size > 1 %}true{% else %}false{% endif %},
+  "arrowShape": "M20.4444 18.6695C26.5472 13.5472 34.5972 10.3167 32.2222 0C30.3194 1.07222 28.6667 1.93053 27.0834 2.90553C19.5 7.57497 11.9445 12.2945 4.35556 16.9612C1.63334 18.6334 -0.986097 26.7806 0.369459 29.6361C0.500014 29.9195 0.647191 30.2333 0.877746 30.425C9.5833 37.7028 18.2973 44.9694 27.025 52.2222C27.4889 52.6083 28.0694 52.85 28.6111 53.1667C31.2944 47.4306 31.0723 42.8889 26.6612 39.9083C22.4056 37.0333 18.6833 33.3639 14.7444 30.0195C13.875 29.2861 13.089 28.4556 11.7807 27.2029C20.414 27.8945 28.3112 28.814 36.2334 29.0917C48.0223 29.5084 59.8278 29.6445 71.6278 29.5695C79.7917 29.5223 87.9501 28.8722 96.114 28.5945C98.5945 28.5111 99.8501 27.6084 99.9917 24.9917C100.122 22.5778 98.7861 21.9834 96.8638 21.9306C90.6361 21.7639 84.4055 21.4722 78.1778 21.5417C60.4305 21.7361 42.7195 21.2194 25.0584 19.411C23.725 19.2749 22.4028 18.9889 20.4444 18.6695",
   "autoPlay": {% if section.settings.autoplay %}{{ section.settings.cycle_speed | times: 1000 }}{% else %}false{% endif %}
 }
 {%- endcapture -%}
@@ -42,7 +42,7 @@
 
   {%- endif -%}
 
-  <div class="TestimonialList TestimonialList--withNav Carousel Carousel--fadeIn" data-flickity-config='{{ flickity_options }}'>
+  <div class="TestimonialList TestimonialList--custom TestimonialList--withNav Carousel" data-flickity-config='{{ flickity_options }}'>
 
     {%- for block in section.blocks -%}
       <div id="block-{{ block.id }}" class="Carousel__Cell Testimonial {% if forloop.first %}is-selected{% endif %}" {{ block.shopify_attributes }} data-slide-index="{{ forloop.index0 }}">

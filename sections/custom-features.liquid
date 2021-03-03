@@ -1,4 +1,4 @@
-<section class="Section Section--instagram Section--spacingNormal Section--reversed" id="section-{{ section.id }}">
+<section class="Section Section--features Section--spacingLarge Section--reversed Section--wave-top" id="section-{{ section.id }}">
 
   <div class="Container">
 
@@ -29,6 +29,87 @@
 
       </header>
 
+      <div class="Features">
+
+        <div class="FeaturesContainer">
+
+          <div class="Features__Left desktop-only">
+
+            {%- for block in section.blocks -%}
+
+              {% assign modulus = forloop.index | modulo: 2 %}
+
+              {%- if modulus == 1 -%}
+                {% assign isEven = false %}
+              {%- else -%}
+                {% assign isEven = true %}
+              {%- endif -%}
+
+              {%- if isEven == false -%}
+              <div class="Feature">
+                <div class="Feature__Content">
+                  <h4 class="Feature__Title Heading u-h2">{{ block.settings.title }}</h4>
+                  <div class="Feature__Text">{{ block.settings.description }}</div>
+                </div>
+              </div>
+              {%- endif -%}
+
+            {%- endfor -%}
+
+          </div>
+
+          <div class="Features__Image">
+            <img src="{{ section.settings.image | img_url: '1000x' }}" alt="Feature Image">
+          </div>
+
+          <div class="Features__Right desktop-only">
+
+              {%- for block in section.blocks -%}
+
+                {% assign modulus = forloop.index | modulo: 2 %}
+
+                {%- if modulus == 1 -%}
+                  {% assign isEven = false %}
+                {%- else -%}
+                  {% assign isEven = true %}
+                {%- endif -%}
+
+                {%- if isEven == true -%}
+                <div class="Feature">
+                  <div class="Feature__Content">
+                    <h4 class="Feature__Title Heading u-h2">{{ block.settings.title }}</h4>
+                    <div class="Feature__Text">{{ block.settings.description }}</div>
+                  </div>
+                </div>
+                {%- endif -%}
+
+              {%- endfor -%}
+
+            </div>
+
+        </div>
+
+        <div class="mobile-only">
+
+          <div class="FeaturesContainerMobile">
+
+          {%- for block in section.blocks -%}
+
+            <div class="Feature">
+              <div class="Feature__Content">
+                <h4 class="Feature__Title Heading u-h2">{{ block.settings.title }}</h4>
+                <div class="Feature__Text">{{ block.settings.description }}</div>
+              </div>
+            </div>
+
+          {%- endfor -%}
+
+          </div>
+
+        </div>
+
+      </div>
+
     {%- endif -%}
 
   </div>
@@ -38,7 +119,7 @@
 {% schema %}
 {
   "name": "Custom - Features",
-  "class": "shopify-section--bordered shopify-section--reversed",
+  "class": "shopify-section--bordered shopify-section--custom-features shopify-section--reversed",
   "settings": [
     {
       "type": "text",
@@ -57,6 +138,31 @@
       "id": "content",
       "label": "Content",
       "default": "<p>Description. Lorem ipsum dolor sit amet.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Features Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Beach"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Lorem ipsum dolor sit amet.</p>"
+        }
+      ]
     }
   ],
   "presets": [

@@ -28,6 +28,7 @@ html {
 
 body {
   margin: 0;
+  font-weight: 300;
 }
 
 [hidden] {
@@ -5459,8 +5460,24 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 .Section--reversed .SectionHeader__Heading,
 .Section--reversed .SectionHeader__SubHeading,
+.Section--reversed .Heading,
 .Section--reversed p {
   color: #fff;
+}
+
+.Section--wave-top {
+  position: relative
+}
+
+.Section--wave-top:before {
+  content: "";
+  display: block;
+  background-image: var(--embellishment--wave-top);
+  background-repeat: repeat-x;
+  height: 21px;
+  width: 100%;
+  position: absolute;
+  top: -1px;
 }
 
 /* When a spacing is applied to a bordered section, as it is isolated, we use padding, otherwise margin */
@@ -7802,6 +7819,12 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 }
 
+.shopify-section--custom-testimonials .flickity-viewport {
+
+  overflow: hidden !important;
+
+}
+
 .shopify-section--custom-testimonials .TestimonialList--custom .Testimonial__Heading {
 
   margin-bottom: 0.5em;
@@ -7895,6 +7918,85 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 }
 
+/* ----- Custom Features ----- */
+
+.shopify-section--custom-features {
+
+}
+
+.shopify-section--custom-features .Feature {
+
+  padding: 50px 0;
+  text-align: center;
+  max-width: 300px;
+
+}
+
+.shopify-section--custom-features .Feature__Title {
+
+  margin-bottom: 0.25em;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 1.8em;
+
+}
+
+.shopify-section--custom-features .Features__Image {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.shopify-section--custom-features .Features__Left .Feature {
+  margin-left: auto;
+}
+
+.shopify-section--custom-features .Features__Right .Feature {
+  margin-right: auto;
+}
+
+.shopify-section--custom-features .FeaturesContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.shopify-section--custom-features .FeaturesContainer .Features__Image {
+  max-width: 500px;
+}
+
+@media screen and (min-width: 800px) {
+  .shopify-section--custom-features .mobile-only {
+    display: none  !important;
+  }
+}
+
+.shopify-section--custom-features .desktop-only {
+  display: none !important;
+}
+@media screen and (min-width: 800px) {
+  .shopify-section--custom-features .desktop-only {
+    display: block  !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+
+  .shopify-section--custom-features {
+
+  }
+
+}
+
+@media screen and (min-width: 640px) {
+
+  .shopify-section--custom-features {
+
+  }
+
+}
+
 /* ----- TEMPLATE ----- */
 
 .shopify-section--custom-template .Section {
@@ -7910,7 +8012,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (min-width: 640px) {
 
   .shopify-section--custom-template .FeatureText {
 
@@ -8212,7 +8314,6 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 .Header {
   background: var(--header-background);
   color: var(--header-heading-color);
-  box-shadow: 0 -1px var(--header-border-color) inset;
   transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 

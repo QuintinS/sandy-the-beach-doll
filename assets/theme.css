@@ -110,7 +110,7 @@ h6 {
   line-height: 1.2;
 }
 
-h1 {
+h1, .u-h1 {
 
   font-family: var(--heading-font-family);
   font-weight: var(--heading-font-weight);
@@ -120,7 +120,7 @@ h1 {
 
 }
 
-h2 {
+h2, .u-h2 {
 
   font-family: var(--heading-font-family);
   font-weight: var(--heading-font-weight);
@@ -130,7 +130,7 @@ h2 {
 
 }
 
-h3 {
+h3, .u-h3 {
 
   font-family: var(--heading-font-family);
   font-weight: var(--heading-font-weight);
@@ -140,7 +140,7 @@ h3 {
 
 }
 
-h4 {
+h4, .u-h4 {
 
   font-family: var(--text-font-family);
   font-weight: var(--text-font-weight);
@@ -153,7 +153,7 @@ h4 {
 
 }
 
-h5 {
+h5, .u-h5 {
 
   font-family: var(--text-font-family);
   font-weight: var(--text-font-weight);
@@ -166,7 +166,7 @@ h5 {
 
 }
 
-h6 {
+h6, .u-h6 {
 
   font-family: var(--text-font-family);
   font-weight: var(--text-font-weight);
@@ -5449,7 +5449,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 }
 
 .shopify-section--bordered + .shopify-section--bordered {
-  border-top: 1px solid var(--border-color);
+  /* border-top: 1px solid var(--border-color); */
 }
 
 .Section--reversed {
@@ -7787,6 +7787,84 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   max-width: 1200px;
   margin: 80px auto;
 }
+
+/* ----- Custom Testimonials ----- */
+
+.shopify-section--custom-testimonials .Section {
+
+
+}
+
+.shopify-section--custom-testimonials .Testimonial__Heading {
+
+  margin-bottom: 0.5em;
+
+}
+
+.shopify-section--custom-testimonials .Testimonial__Text {
+
+  max-width: 300px;
+  margin-bottom: 1em;
+  margin: auto auto 1em;
+
+}
+
+.shopify-section--custom-testimonials .Testimonial__Content {
+
+  max-width: none;
+  padding: 50px;
+
+  font-weight: 300;
+  font-size: 18px;
+
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 0 rgba(76, 126, 191, 0.05);
+  background-color: rgba(255, 255, 255, 0.85);
+
+}
+
+@media screen and (min-width: 640px) {
+
+  .shopify-section--custom-testimonials .Testimonial__Content {
+
+    max-width: 610px;
+
+  }
+
+}
+
+@media screen and (max-width: 640px) {
+
+  .shopify-section--custom-testimonials .Testimonial__Content {
+
+
+  }
+
+}
+
+/* ----- TEMPLATE ----- */
+
+.shopify-section--custom-template .Section {
+
+
+}
+
+@media screen and (max-width: 640px) {
+
+  .shopify-section--custom-template .Section {
+
+  }
+
+}
+
+@media screen and (max-width: 640px) {
+
+  .shopify-section--custom-template .FeatureText {
+
+  }
+
+}
+
 
 .Footer {
 

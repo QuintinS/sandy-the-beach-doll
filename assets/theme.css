@@ -7966,6 +7966,10 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   max-width: 500px;
 }
 
+.shopify-section--custom-features .FeaturesContainerMobile .Feature {
+  margin: auto;
+}
+
 @media screen and (min-width: 800px) {
   .shopify-section--custom-features .mobile-only {
     display: none  !important;

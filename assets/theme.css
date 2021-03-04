@@ -7800,9 +7800,13 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 }
 
-.Section--instagram .instagram--instafeed {
-  max-width: 1200px;
-  margin: 80px auto;
+.Section--instagram #insta-feed > a {
+  margin: 1em;
+}
+
+.Section--instagram #insta-feed .instafeed-container {
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 /* ----- Custom Testimonials ----- */

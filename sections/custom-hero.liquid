@@ -10,9 +10,14 @@
           {%- if section.settings.subheading != blank or section.settings.title != blank -%}
 
             <header class="SectionHeader">
+
               {%- if section.settings.subheading != blank -%}
                 <h3 class="SectionHeader__SubHeading Heading">{{ section.settings.subheading | escape }}</h3>
               {%- endif -%}
+
+              <div class="decoration--text">
+                {% render 'decoration--hi-there' %}
+              </div>
 
               {%- if section.settings.title != blank -%}
 

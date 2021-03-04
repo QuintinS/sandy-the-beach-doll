@@ -8005,6 +8005,93 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 }
 
+/* ----- Custom Featured Product ----- */
+
+.shopify-section--custom-featured-product .Section {
+  padding-top: 0 !important;
+}
+
+.shopify-section--custom-featured-product .FeaturedProduct {
+  max-width: 1000px;
+}
+
+.shopify-section--custom-featured-product .FeaturedProduct__Info {
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.shopify-section--custom-featured-product .ProductMeta {
+  text-align: center !important;
+}
+
+.shopify-section--custom-featured-product .ProductForm__Option .ProductForm__Label {
+  display: none;
+}
+
+.shopify-section--custom-featured-product .ColorSwatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.shopify-section--custom-featured-product .ColorSwatch:after {
+  border-radius: 100%;
+}
+.shopify-section--custom-featured-product .ColorSwatch[data-tooltip="Pacific Blue"] {
+  background: #4C7EBF !important;
+}
+.shopify-section--custom-featured-product .ColorSwatch[data-tooltip="Fuschia"] {
+  background: #E97EA0 !important;
+}
+.shopify-section--custom-featured-product .ColorSwatch[data-tooltip="Green"] {
+  background: #12ABBA !important;
+}
+
+.shopify-section--custom-featured-product .AspectRatio {
+
+  --aspect-ratio: 1 !important;
+  position: relative;
+
+}
+
+.shopify-section--custom-featured-product .AspectRatio * {
+  line-height: 1;
+  vertical-align: top;
+}
+
+.shopify-section--custom-featured-product .AspectRatio img {
+  object-fit: cover;
+}
+
+.shopify-section--custom-featured-product .AspectRatio__Mask,
+.shopify-section--custom-featured-product .AspectRatio__Mask svg {
+  position: absolute;
+  top:-0;
+  bottom:03px;
+  left:0;
+  right:0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+
+  .shopify-section--custom-featured-product .FeaturedProduct__Info {
+    padding-left: 50px;
+  }
+
+}
+
+@media screen and (min-width: 640px) {
+
+  .shopify-section--custom-featured-product .FeatureText {
+
+  }
+
+}
+
 /* ----- TEMPLATE ----- */
 
 .shopify-section--custom-template .Section {
@@ -11683,11 +11770,17 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   }
 }
 
+
 /**
  * ----------------------------------------------------------------------------
  * Animated Doodles
  * ----------------------------------------------------------------------------
  */
+
+ .decoration--text {
+     margin-bottom: 1em;
+ }
+
 
 
  .doodle {

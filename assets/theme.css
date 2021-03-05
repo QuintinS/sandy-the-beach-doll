@@ -24,6 +24,7 @@ html {
      -moz-text-size-adjust: 100%;
           text-size-adjust: 100%;
   -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-x: hidden;
 }
 
 body {
@@ -5458,6 +5459,10 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 }
 .shopify-section--hidden {
   display: none;
+}
+
+.shopify-section--bordered {
+  position: relative;
 }
 
 .shopify-section--bordered + .shopify-section--bordered {
@@ -11844,6 +11849,10 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
      max-width: 80px;
      max-height: 80px;
    }
+   .doodle svg {
+     max-width: 80px;
+     max-height: 80px;
+   }
 }
 
  .doodle--sun * {
@@ -11853,6 +11862,18 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
  .doodle--sandles,
  .doodle--sandles * {
+   fill: var(--color-brand-skyblue);
+   stroke: var(--color-brand-skyblue);
+ }
+
+ .doodle--starfish,
+ .doodle--starfish * {
+   fill: var(--color-brand-peach);
+   stroke: var(--color-brand-peach);
+ }
+
+ .doodle--crab,
+ .doodle--crab * {
    fill: var(--color-brand-skyblue);
    stroke: var(--color-brand-skyblue);
  }
@@ -11867,6 +11888,20 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
  }
 
  #doodle-3 {
+  right: 0;
+ }
+
+ #doodle-5 {
+  right: 0;
+  z-index: -1;
+ }
+
+ #doodle-6 {
+  left: 0;
+ }
+
+ #doodle-7 {
+  top: 210px;
   right: 0;
  }
 

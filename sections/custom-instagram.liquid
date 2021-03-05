@@ -1,5 +1,9 @@
 <section class="Section Section--instagram Section--spacingLarge Section--reversed" id="section-{{ section.id }}">
 
+  <div id="doodle-6" class="doodle doodle--jiggle-1">
+    {% render 'doodle--crab' %}
+  </div>
+
   <div class="Container">
 
     {%- if section.settings.subheading != blank or section.settings.title != blank -%}
@@ -30,6 +34,10 @@
       </header>
 
     {%- endif -%}
+
+    <div id="doodle-7" class="doodle doodle--jiggle-1">
+      {% render 'doodle--clam' %}
+    </div>
 
     <div id="insta-feed"></div>
 

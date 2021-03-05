@@ -29,6 +29,7 @@ html {
 body {
   margin: 0;
   font-weight: 300;
+  overflow-x: hidden;
 }
 
 [hidden] {
@@ -5468,6 +5469,10 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   color: #fff;
 }
 
+.Section--reversed .doodle--wave * {
+  fill: var(--color-brand-skyblue);
+}
+
 .Section--reversed .SectionHeader__Heading,
 .Section--reversed .SectionHeader__SubHeading,
 .Section--reversed .Heading,
@@ -5590,7 +5595,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   }
 
   .Section--spacingExtraLarge {
-    margin: 145px 0;
+    margin: 180px 0;
   }
 
   .shopify-section--bordered > .Section--spacingNormal {
@@ -5602,7 +5607,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   }
 
   .shopify-section--bordered > .Section--spacingExtraLarge {
-    padding: 145px 0;
+    padding: 180px 0;
   }
 
   .SectionHeader:not(:only-child) {
@@ -7763,8 +7768,20 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 }
 
+.shopify-section--hero .SectionHeader__Heading {
+  margin-bottom: 0.25em;
+}
+
+.shopify-section--hero .Section {
+  padding-top: 40px;
+}
+
 .shopify-section--hero .FeatureText__Content {
   max-width: 300px;
+}
+
+.shopify-section--hero .AspectRatio {
+  transform: scale(0.9);
 }
 
 .shopify-section--hero .AspectRatio img {
@@ -7822,6 +7839,12 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 .shopify-section--custom-testimonials .Section {
 
 
+}
+.shopify-section--custom-testimonials .Section .SectionHeader {
+  margin-bottom: 20px;
+}
+.shopify-section--custom-testimonials .Section .SectionHeader h2 {
+  margin-bottom: 0.25em;
 }
 
 .shopify-section--custom-testimonials .TestimonialList--custom .Testimonial {
@@ -7944,6 +7967,14 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 }
 
+.shopify-section--custom-features .SectionHeader__Heading {
+
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
 .shopify-section--custom-features .Feature__Title {
 
   margin-bottom: 0.25em;
@@ -8024,7 +8055,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 }
 
 .shopify-section--custom-featured-product .FeaturedProduct__Info {
-  max-width: 400px;
+  max-width: 420px;
   margin: auto;
   text-align: center;
 }
@@ -8087,7 +8118,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 @media screen and (min-width: 640px) {
 
   .shopify-section--custom-featured-product .FeaturedProduct__Info {
-    padding-left: 50px;
+    padding-left: 100px;
   }
 
 }
@@ -8133,6 +8164,14 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   border-top: 0;
   border-bottom: 10px solid var(--color-brand-peach);
 
+}
+
+.Footer .Footer__Copyright {
+  padding: 20px 0 20px 60px;
+  background-image: var(--doodle-sun);
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: left 50%;
 }
 
 .Footer:before {
@@ -11803,12 +11842,19 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
  @media screen and (max-width: 640px) {
    .doodle {
      max-width: 80px;
+     max-height: 80px;
    }
 }
 
  .doodle--sun * {
    fill: var(--color-brand-peach);
    stroke: var(--color-brand-peach);
+ }
+
+ .doodle--sandles,
+ .doodle--sandles * {
+   fill: var(--color-brand-skyblue);
+   stroke: var(--color-brand-skyblue);
  }
 
  #doodle-1 {
@@ -11818,6 +11864,10 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
  #doodle-2 {
    bottom: -80px;
    left: -80px;
+ }
+
+ #doodle-3 {
+  right: 0;
  }
 
  .doodle--jiggle-1 {
@@ -11840,8 +11890,8 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
  }
 
  .doodle--jiggle-2 svg {
-    -webkit-animation: jiggle--1 3s infinite ease-in-out both;
-            animation: jiggle--1 3s infinite ease-in-out both;
+    -webkit-animation: jiggle--2 3s infinite ease-in-out both;
+            animation: jiggle--2 3s infinite ease-in-out both;
     -webkit-animation-timing-function: cubic-bezier(.02, .01, .47, 1);
             animation-timing-function: cubic-bezier(.02, .01, .47, 1);
  }
@@ -11888,6 +11938,37 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   50% {
     -webkit-transform: translate(5px) scale(0.85) rotate(-30deg);
             transform: translate(5px) scale(0.85) rotate(-30deg);
+  }
+  100% {
+    -webkit-transform: translate(0px) scale(1) rotate(0deg);
+            transform: translate(0px) scale(1) rotate(0deg);
+  }
+}
+
+
+@keyframes jiggle--1 {
+  0% {
+    -webkit-transform: translate(0px) scale(1);
+            transform: translate(0px) scale(1);
+  }
+  50% {
+    -webkit-transform: translate(5px) scale(0.9);
+            transform: translate(5px) scale(0.9);
+  }
+  100% {
+    -webkit-transform: translate(0px) scale(1);
+            transform: translate(0px) scale(1);
+  }
+}
+
+@-webkit-keyframes jiggle--1 {
+  0% {
+    -webkit-transform: translate(0px) scale(1) rotate(0deg);
+            transform: translate(0px) scale(1) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translate(5px) scale(0.85) rotate(-10deg);
+            transform: translate(5px) scale(0.85) rotate(-10deg);
   }
   100% {
     -webkit-transform: translate(0px) scale(1) rotate(0deg);

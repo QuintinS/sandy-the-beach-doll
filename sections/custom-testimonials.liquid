@@ -15,13 +15,19 @@
   {%- if section.settings.subheading != blank or section.settings.title != blank -%}
 
     <header class="SectionHeader SectionHeader--center">
+
       {%- if section.settings.subheading != blank -%}
         <h3 class="SectionHeader__SubHeading Heading">{{ section.settings.subheading | escape }}</h3>
       {%- endif -%}
 
       {%- if section.settings.title != blank -%}
 
-        <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+        <h2 class="SectionHeader__Heading Heading u-h1">
+          <div id="doodle-4" class="doodle doodle--jiggle-2">
+            {% render 'doodle--umbrella'%}
+          </div>
+          <span>{{ section.settings.title | escape }}</span>
+        </h2>
 
         <div class="SectionHeader__divider">
           {% render 'divider' %}

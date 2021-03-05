@@ -1,4 +1,4 @@
-<section class="Section {% unless section.settings.image %}Section--spacingNormal{% endunless %}">
+<section class="Section Section--spacingLarge">
 
   <div class="Container Container--narrow">
 
@@ -52,8 +52,12 @@
       {%- if section.settings.image != blank -%}
         <div class="FeatureText__ImageWrapper">
 
-          <div class="doodle doodle--jiggle-1">
+          <div id="doodle-1" class="doodle doodle--jiggle-1">
             {% render 'doodle--clam'%}
+          </div>
+
+          <div id="doodle-2" class="doodle doodle--jiggle-1">
+            {% render 'doodle--sun'%}
           </div>
 
           {%- capture supported_sizes -%}{%- render 'image-size', sizes: '400,600,700,800,900,1000,1200', image: section.settings.image -%}{%- endcapture -%}

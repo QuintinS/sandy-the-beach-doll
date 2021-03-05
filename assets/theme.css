@@ -7609,7 +7609,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 }
 
 .FeatureText__ImageWrapper {
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .FeatureText--withImage .FeatureText__ContentWrapper {
@@ -7622,11 +7622,9 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   margin-bottom: 20px;
 }
 
-.shopify-section--custom-image-text .Section {
 
-  padding-top: 80px;
-  padding-bottom: 80px;
-
+.shopify-section--custom-image-text .FeatureText .FeatureText__ImageWrapper {
+  position: relative;
 }
 
 @media screen and (max-width: 640px) {
@@ -11798,12 +11796,54 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   z-index: 1;
  }
 
+ .doodle svg {
+   width: 100%;
+ }
+
+ @media screen and (max-width: 640px) {
+   .doodle {
+     max-width: 80px;
+   }
+}
+
+ .doodle--sun * {
+   fill: var(--color-brand-peach);
+   stroke: var(--color-brand-peach);
+ }
+
+ #doodle-1 {
+   right: 0;
+ }
+
+ #doodle-2 {
+   bottom: -80px;
+   left: -80px;
+ }
+
  .doodle--jiggle-1 {
-    transform: translate(0);
-    -webkit-animation: jiggle--1 2.5s infinite ease-in-out both;
-            animation: jiggle--1 2.5s infinite ease-in-out both;
-    -webkit-animation-timing-function: cubic-bezier(0.43, 0.43, 0.25, 0.99);
-            animation-timing-function: cubic-bezier(0.43, 0.43, 0.25, 0.99);
+    transform: translate(20px);
+    -webkit-animation: rotate-30 5s linear infinite alternate;
+            animation: rotate-30 5s linear infinite alternate;
+ }
+
+ .doodle--jiggle-1 svg {
+    -webkit-animation: jiggle--1 3s infinite ease-in-out both;
+            animation: jiggle--1 3s infinite ease-in-out both;
+    -webkit-animation-timing-function: cubic-bezier(.02, .01, .47, 1);
+            animation-timing-function: cubic-bezier(.02, .01, .47, 1);
+ }
+
+ .doodle--jiggle-2 {
+    transform: translate(20px);
+    -webkit-animation: rotate-15 5s linear infinite alternate;
+            animation: rotate-15 5s linear infinite alternate;
+ }
+
+ .doodle--jiggle-2 svg {
+    -webkit-animation: jiggle--1 3s infinite ease-in-out both;
+            animation: jiggle--1 3s infinite ease-in-out both;
+    -webkit-animation-timing-function: cubic-bezier(.02, .01, .47, 1);
+            animation-timing-function: cubic-bezier(.02, .01, .47, 1);
  }
 
 
@@ -11813,56 +11853,44 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
  * ----------------------------------------------------------------------------
  */
 
+@keyframes rotate-30 {
+  100% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes rotate-15 {
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
 @keyframes jiggle--1 {
   0% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
+    -webkit-transform: translate(0px) scale(1);
+            transform: translate(0px) scale(1);
   }
-  20% {
-    -webkit-transform: translate(-5px, 5px);
-            transform: translate(-5px, 5px);
-  }
-  40% {
-    -webkit-transform: translate(-5px, -5px);
-            transform: translate(-5px, -5px);
-  }
-  60% {
-    -webkit-transform: translate(5px, 5px);
-            transform: translate(5px, 5px);
-  }
-  80% {
-    -webkit-transform: translate(5px, -5px);
-            transform: translate(5px, -5px);
+  50% {
+    -webkit-transform: translate(5px) scale(0.9);
+            transform: translate(5px) scale(0.9);
   }
   100% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
+    -webkit-transform: translate(0px) scale(1);
+            transform: translate(0px) scale(1);
   }
 }
 
 @-webkit-keyframes jiggle--1 {
   0% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
+    -webkit-transform: translate(0px) scale(1) rotate(0deg);
+            transform: translate(0px) scale(1) rotate(0deg);
   }
-  20% {
-    -webkit-transform: translate(-5px, 5px);
-            transform: translate(-5px, 5px);
-  }
-  40% {
-    -webkit-transform: translate(-5px, -5px);
-            transform: translate(-5px, -5px);
-  }
-  60% {
-    -webkit-transform: translate(5px, 5px);
-            transform: translate(5px, 5px);
-  }
-  80% {
-    -webkit-transform: translate(5px, -5px);
-            transform: translate(5px, -5px);
+  50% {
+    -webkit-transform: translate(5px) scale(0.85) rotate(-30deg);
+            transform: translate(5px) scale(0.85) rotate(-30deg);
   }
   100% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
+    -webkit-transform: translate(0px) scale(1) rotate(0deg);
+            transform: translate(0px) scale(1) rotate(0deg);
   }
 }

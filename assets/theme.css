@@ -1647,6 +1647,16 @@ input.spr-button-primary[disabled],
   border-color: var(--color-primary);
 }
 
+@media (-moz-touch-enabled: 0), (hover: hover) {
+
+  .Button--primary.Button--hollow {
+    background: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+}
+
 .Button--primary.Button--hollow:not([disabled]):hover {
   color: #fff;
 }
@@ -1711,7 +1721,7 @@ input.spr-button-primary[disabled],
 }
 
 
-@media (-moz-touch-enabled: 0), (hover: hover) {
+/* @media (-moz-touch-enabled: 0), (hover: hover) { */
 
   .features--show-button-transition .Button:not([disabled])::before,
   .features--show-button-transition .shopify-payment-button__button--unbranded:not([disabled])::before,
@@ -1770,7 +1780,7 @@ input.spr-button-primary[disabled],
     transform: scale(1, 1);
   }
 
-}
+/* } */
 
 .Button--full {
   width: 100%;

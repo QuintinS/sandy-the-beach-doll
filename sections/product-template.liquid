@@ -315,8 +315,8 @@
           {%- if section.settings.stack_images and product_aside != blank and media_count > 0 -%}
             <div class="Product__QuickNav hidden-pocket">
               <div class="Product__QuickNavWrapper">
-                <a href="#ProductAside" class="Heading Link Link--secondary u-h7">{{ 'product.form.view_info' | t }} {% render 'icon' with 'select-arrow-right' %}</a>
-                <a href="#ProductGallery" class="Heading Link Link--secondary u-h7">{{ 'product.form.view_images' | t }} {% render 'icon' with 'select-arrow-right' %}</a>
+                <a href="#ProductAside" class="Heading Link Link--secondary">{{ 'product.form.view_info' | t }} {% render 'icon' with 'select-arrow-right' %}</a>
+                <a href="#ProductGallery" class="Heading Link Link--secondary">{{ 'product.form.view_images' | t }} {% render 'icon' with 'select-arrow-right' %}</a>
               </div>
             </div>
           {%- endif -%}

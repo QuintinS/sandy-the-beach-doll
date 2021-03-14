@@ -2517,6 +2517,22 @@ body:not(.is-tabbing) .flickity-enabled:focus {
   touch-action: manipulation; /* Animating box-shadow is slow, even on modern browsers, so we instead move it in a pseudo-element and animate opacity */
 }
 
+.Drawer .Drawer__Title {
+  text-transform: none;
+  letter-spacing: 0;
+}
+.Drawer .CartItem .CartItem__Title,
+.Drawer .CartItem .CartItem__Remove,
+.Drawer .CartItem .CartItem__Meta {
+  font-size: 14px;
+}
+.Drawer .Cart__Taxes {
+  font-size: 14px;
+}
+.Drawer .CartItem__ImageWrapper {
+  vertical-align: top;
+}
+
 .Drawer:focus {
   outline: none;
 }
@@ -10147,8 +10163,28 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   margin-top: 24px;
 }
 
+.ProductForm .ColorSwatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.ProductForm .ColorSwatch:after {
+  border-radius: 100%;
+}
+.ProductForm .ColorSwatch[data-tooltip="Pacific Blue"] {
+  background: #4C7EBF !important;
+}
+.ProductForm .ColorSwatch[data-tooltip="Fuschia"] {
+  background: #E97EA0 !important;
+}
+.ProductForm .ColorSwatch[data-tooltip="Green"] {
+  background: #12ABBA !important;
+}
+
 .ProductForm__Variants {
   margin-bottom: 25px;
+  text-align: center;
 }
 
 .ProductForm__Option {
@@ -11147,7 +11183,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 }
 
 .SidebarMenu .Text--subdued {
-  
+
 }
 
 .SidebarMenu .Collapsible,

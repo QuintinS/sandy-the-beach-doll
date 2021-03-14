@@ -1229,7 +1229,6 @@ body {
 }
 
 .Text--subdued {
-  color: var(--text-color-light);
 }
 
 .Text--alignCenter {
@@ -2893,6 +2892,13 @@ body:not(.is-tabbing) .flickity-enabled:focus {
 .Form__Submit {
   display: block;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 640px) {
+  .Form__Submit {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .Form__Label,
@@ -7810,8 +7816,13 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 @media screen and (max-width: 640px) {
 
-  .shopify-section--hero .Section {
+  .shopify-section--hero .FeatureText__ImageWrapper {
+      padding: 0 !important;
+  }
 
+  .shopify-section--hero .Section {
+    padding-top: 0;
+    padding-bottom: 80px;
   }
 
   .shopify-section--hero .FeatureText__ImageWrapper {
@@ -7844,6 +7855,11 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 .shopify-section--custom-testimonials .Section {
 
 
+}
+.shopify-section--custom-testimonials .SectionHeader__Heading {
+    width: auto;
+    display: inline-block;
+    position: relative;
 }
 .shopify-section--custom-testimonials .Section .SectionHeader {
   margin-bottom: 20px;
@@ -8171,6 +8187,19 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 }
 
+@media screen and (max-width: 640px) {
+
+  .Footer {
+    padding-top: 80px;
+  }
+
+  .Footer,
+  .Footer a,
+  .Footer .Linklist__Item {
+    text-align: center;
+  }
+}
+
 .Footer .Footer__Copyright {
   padding: 20px 0 20px 60px;
   background-image: var(--doodle-sun);
@@ -8279,6 +8308,10 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   height: 24px;
 }
 
+.Footer__StoreName {
+  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 11px));
+}
+
 @media screen and (min-width: 641px) {
   .Footer {
     padding: 75px 0 10px 0;
@@ -8330,7 +8363,6 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
   .Footer__StoreName {
     color: #979797;
-    font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 11px));
   }
 
   .Footer__StoreName a {
@@ -8566,6 +8598,12 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   height: 20px;
 }
 
+@media screen and (max-width: 640px) {
+  .Header__Icon .hidden-tablet-and-up .Icon--cart {
+      transform: scale(1.5);
+  }
+}
+
 .Header__Icon .Icon--search {
   position: relative;
   top: 1px; /* for pixel perfect */
@@ -8606,6 +8644,15 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 .Search[aria-hidden=true] + .Header--transparent .Header__CartDot {
   box-shadow: none;
   background-color: currentColor;
+}
+
+@media screen and (max-width: 640px) {
+  .Header__Logo {
+    max-width: 100px;
+  }
+  .Header__Logo svg {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 641px) {
@@ -11100,7 +11147,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 }
 
 .SidebarMenu .Text--subdued {
-  color: var(--navigation-text-color-light);
+  
 }
 
 .SidebarMenu .Collapsible,
@@ -11110,6 +11157,14 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 .SidebarMenu__Nav .Collapsible:first-child {
   border-top: none;
+}
+
+.SidebarMenu__Nav .Linklist .Linklist__Item,
+.SidebarMenu__Nav .Collapsible__Button {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 1em;
+    font-weight: 300;
 }
 
 /* We need to do that to add extra padding for scroll, as Safari on Mac and iOS has some issue with directly adding a padding-bottom */
@@ -11830,10 +11885,13 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
  */
 
  .decoration--text {
-     margin-bottom: 1em;
+   margin-bottom: 1em;
  }
-
-
+ @media screen and (max-width: 640px) {
+   .decoration--text {
+     padding-top: 1em;
+   }
+ }
 
  .doodle {
   position: absolute;
@@ -11879,7 +11937,10 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
  }
 
  #doodle-1 {
-   right: 0;
+  right: 20px;
+  top: 50px;
+ }
+ @media screen and (max-width: 640px) {
  }
 
  #doodle-2 {
@@ -11887,14 +11948,32 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
    left: -80px;
  }
 
+ @media screen and (max-width: 640px) {
+  #doodle-2 {
+    bottom: -10px;
+    left: -10px;
+  }
+ }
+
  #doodle-3 {
   right: 0;
+ }
+
+ #doodle-4 {
+  top: -100%;
+  left: -50%;
  }
 
  #doodle-5 {
   right: 0;
   z-index: -1;
  }
+
+@media screen and (max-width: 640px) {
+ #doodle-5 {
+  display: none;
+ }
+}
 
  #doodle-6 {
   left: 0;

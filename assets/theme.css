@@ -7858,7 +7858,12 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 }
 
 .Section--instagram #insta-feed > a {
-  margin: 1em;
+
+}
+
+.Section--instagram #insta-feed > a img {
+  padding: 10px;
+  border-radius: 30px;
 }
 
 .Section--instagram #insta-feed .instafeed-container {

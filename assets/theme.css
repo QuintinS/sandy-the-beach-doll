@@ -24,13 +24,15 @@ html {
      -moz-text-size-adjust: 100%;
           text-size-adjust: 100%;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   font-weight: 300;
-  overflow-x: hidden;
+}
+
+.template-index {
+    overflow-x: hidden;
 }
 
 [hidden] {
